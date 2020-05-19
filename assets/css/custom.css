@@ -11,3 +11,11 @@
   font-size: 1.5rem;  
   font-style: italic;
 }
+
+@media (prefers-color-scheme: dark){
+  .site-header-background:after, .site-header-background:before {
+    background: linear-gradient(90deg, black 21px, transparent 1%) center, linear-gradient(black 21px, transparent 1%) center, #2e2e2e;
+    background-size: 22px 22px;
+  }
+}
+
