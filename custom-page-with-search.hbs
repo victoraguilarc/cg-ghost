@@ -1,0 +1,56 @@
+{{!< default}}
+
+<header class="site-home-header" style="background: black;">
+  <div class="inner" >
+    {{> "site-nav"}}
+  </div>
+</header>
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer">
+    <section class="post-full-content">
+      <div class="post-content">
+        <h2 class="search-title">Buscar</h2>
+      </div>
+
+      <section role="search" data-ss360="true">
+        <input type="search" id="searchBox">
+        <button id="searchButton"></button>
+      </section>
+      
+      <!-- Search results wrapper -->
+      <div id="search-results-wrapper"></div>
+      <script type="text/javascript">
+        /* Create a configuration object */
+        var ss360Config = {
+          /* Your site id */
+          siteId: "codegramming.xyz",
+          /* A CSS selector that points to your search box */
+          searchBox: {
+            selector: '#searchBox'
+          },
+          /* A CSS selector that points to your search results */
+          results: {
+            embedConfig: {
+                contentBlock: "#search-results-wrapper"
+            }
+          }
+        };
+      </script>
+      <script src="https://cdn.sitesearch360.com/v13/sitesearch360-v13.min.js" async></script>
+      
+
+    </section>
+    <div class="inner posts">
+        <div class="post-feed">
+            {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
+            {{/foreach}}
+        </div>
+    </div>
+</main>
+
+
+{{#contentFor "scripts"}}
+  
+{{/contentFor}}
